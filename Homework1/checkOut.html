@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Check Out</title>
+    <link rel="stylesheet" href="css/checkOut.css">
+    <script src="js/checkOut.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="DashboardCust.html" class="active">Home</a>
+        <a href="Restaurants.html">Restaurants</a>
+        <a href="MyCart.html">My Cart</a>
+        <a href="trackMealPage.html">My Order</a>
+        <a href=#SignOutModal data-toggle="modal" data-target="#SignOutModal">Sign Out</a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+
+    <header>
+        <h1>Check Out</h1>
+    </header>
+    <div class="container">
+        <label><b>Card Number</b></label>
+        <input type="text" placeholder="Enter card number" name="card_num" style="width:250px;height:30px;" required /><br />
+        <label><b>PIN</b></label>
+        <input type="password" placeholder="Enter PIN" name="pin" style="width:250px;height:30px;" required /><br />
+        <label><b>Shipment Address</b></label>
+        <input type="text" placeholder="Enter your address" name="ship_address" style="width:250px;height:30px;" required /><br />
+        <label><b>Billing Address</b></label>
+        <input type="text" placeholder="Enter bill address" name="bill_address" style="width:250px;height:30px;" required />
+    </div>
+    <a href="OrderComplete.html"><button onclick=sendOrder()>Confirm Order</button></a><br />
+
+    <!--SignOut-->
+    <div style="position:absolute">
+        <div class="modal fade" id="SignOutModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" data-backdrop="static"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                        <h3 class="modal-title" id="lineModalLabel">SignOut</h3>
+                    </div>
+                    <div class="modal-body">
+                        Are You Sure ?
+                    </div>
+                    <div class="modal-footer">
+                        <div class="btn-group btn-group-justified" role="group" aria-label="group button">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-success" data-dismiss="modal" role="button" data-backdrop="static">No</button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button type="button" id="login" class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#PopUpSignOutConfirm"
+                                        role="button" data-backdrop="static" onclick="return SignOutConfirm()">
+                                    Yes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Sign Out Confirm-->
+    <div style="position:absolute">
+        <div class="modal fade" id="PopUpSignOutConfirm" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" data-backdrop="static"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                        <h3 class="modal-title" id="lineModalLabel">Result</h3>
+                    </div>
+                    <div class="modal-body">
+                        You have signed out.
+                    </div>
+                    <div class="modal-footer">
+                        <div class="btn-group btn-group-justified" role="group" aria-label="group button">
+                            <div class="btn-group" role="group">
+                                <button type="button" id="login" class="btn btn-danger" data-dismiss="modal"
+                                        role="button" data-backdrop="static" onclick="return goToHome()">
+                                    Back To Homepage
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        function SignOutConfirm() {
+            localStorage.setItem('successSignInCust', 0);
+        }
+
+        function goToHome() {
+            location.href = "Homepage.html";
+        }
+    </script>
+</body>
+</html>

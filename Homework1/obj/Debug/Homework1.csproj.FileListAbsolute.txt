@@ -1,0 +1,9 @@
+C:\Users\shi_k\source\repos\Homework1\Homework1\bin\Homework1.dll.config
+C:\Users\shi_k\source\repos\Homework1\Homework1\bin\Homework1.dll
+C:\Users\shi_k\source\repos\Homework1\Homework1\bin\Homework1.pdb
+C:\Users\shi_k\source\repos\Homework1\Homework1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\shi_k\source\repos\Homework1\Homework1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\shi_k\source\repos\Homework1\Homework1\obj\Debug\Homework1.csproj.CoreCompileInputs.cache
+C:\Users\shi_k\source\repos\Homework1\Homework1\obj\Debug\Homework1.dll
+C:\Users\shi_k\source\repos\Homework1\Homework1\obj\Debug\Homework1.pdb
+C:\Users\shi_k\source\repos\Homework1\Homework1\obj\Debug\Homework1.csprojResolveAssemblyReference.cache

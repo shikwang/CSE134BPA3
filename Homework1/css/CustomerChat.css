@@ -1,0 +1,19 @@
+﻿body {
+    background-color: #cbcbcb !important;
+    font-family: Montserrat, sans-serif
+}
+
+textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    resize: none;
+}
+
+h2{
+    text-align:center;
+}
+
+p{
+    text-align:center;
+}

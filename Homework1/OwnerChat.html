@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Chat Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/CustomerChat.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <h2>Chat With Customer</h2>
+    <textarea readonly cols="100" rows="20" id="box"></textarea></br>
+
+    <textarea cols="100" rows="5" placeholder="Enter your words" id="input"></textarea></br>
+
+    <div class="text-center">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-success" role="button" data-backdrop="static" id="btnsend">Send</button>
+        </div>
+    </div>
+    <br>
+    <div class="btn-group btn-group-justified" role="group" aria-label="group button">
+            <div class="text-center">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-danger" role="button" data-backdrop="static"
+                            onclick="location.href='DashboardRest.html'">
+                        Back to Dashboard
+                    </button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-warning" role="button" data-backdrop="static"
+                            onclick="location.href='DashboardRest.html'">
+                        Back to Order
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src=https://cdn.pubnub.com/sdk/javascript/pubnub.4.0.11.min.js></script>
+        <script>
+        (function () {
+            var pubnub = new PubNub({ publishKey: 'demo', subscribeKey: 'demo' });
+            function $(id) { return document.getElementById(id); }
+            var box = $('box'), input = $('input'), channel = '10chat-demo';
+            pubnub.addListener({
+                message: function (obj) {
+                    var time = new Date();
+                    box.innerHTML = (time + "\\\n" + obj.message + "\\\n").replace(/[<>]/g, '') + box.innerHTML
+                }
+            });
+            pubnub.subscribe({ channels: [channel] });
+            btnsend.addEventListener('click', function (e) {
+                pubnub.publish({ channel: channel, message: input.value, x: (input.value = '') });
+            });
+        })();
+        </script>
+</body>
+</html>
