@@ -54,6 +54,8 @@ function addToCart( menuID ){
         localStorage.setItem("myCart",JSON.stringify(myCart));
     }
 
+    alert('Item Added');
+
 
 
 }

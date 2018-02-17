@@ -46,13 +46,13 @@ function checkOut(){
     // localStorage.clear('myCart');
     // console.log(document.getElementById('num').value);
 
-    // var myCart = JSON.parse(localStorage.myCart);
-    // for (var id in myCart){
-    //     var quantID = 'num'+id;
-    //     myCart[id]['Quantity'] = document.getElementById(quantID).value;
-    //     // console.log(myCart[id]['Quantity']);
-    // }
-    // localStorage.setItem('myCart',JSON.stringify(myCart));
+    var myCart = JSON.parse(localStorage.myCart);
+    for (var id in myCart){
+        var quantID = 'num'+id;
+        myCart[id]['Quantity'] = document.getElementById(quantID).value;
+        
+    }
+    localStorage.setItem('myCart',JSON.stringify(myCart));
     location.href='checkOut.html';
 }
 

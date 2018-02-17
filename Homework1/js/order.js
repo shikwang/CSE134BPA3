@@ -25,7 +25,7 @@ function loadOrder(){
             tr.id = id  ;
             tr.innerHTML = 
                 '<td><a onclick="setOrderID(' + id  + ')" href="OrderDetail.html">' + orderID + '</a></td>' +
-                '<td><a href="OwnerChat.html" >Ryan Hang</a></td>' + 
+                '<td><a href="OwnerChat.html" >' +  localStorage.getItem("Customeremail") + '</a></td>' + 
                 '<td>February 16, 2018</td>' + 
                 '<td>'+ status + '</td>';
 
